@@ -113,7 +113,7 @@ module CapistranoSyncTask
       dump_cmd = "pg_dump"
       dump_cmd << " --no-owner --no-privileges --disable-triggers --inserts"
       dump_cmd << " --username=#{config[:user]}" if config[:user]
-      #dump_cmd << " --password=#{config[:pass]}" if config[:pass]
+      dump_cmd << " --password" if config[:pass]
       dump_cmd << " --host=#{config[:host]}" if config[:host]
       dump_cmd << " #{config[:dbname]}"
     end
